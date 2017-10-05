@@ -38,13 +38,7 @@ if (input == "my-tweets") {
 }
 
 function showTweets () {
-	//var client = new twitter(keys.twitterKeys);
-	var client = new Twitter({
-		consumer_key: 'rfZyUNX7sCxcbEbiitbGO1sHQ',
-		consumer_secret: 'Dj7FJpIIbzUlkiJgGFTOPjEEEFs6rLDiOIftrMDUNEUdel90Zp',
-		access_token_key: '90512594-0NrOSNqW2h8hX4BY4eo0iVUHgt2KGfBHWGN5MPK6c',
-		access_token_secret: 'Ha4ygI1EZRavaJMrUI6jrIpWpiSufQQDH9Al8gygKQTxv'
-	});
+	var client = new Twitter(keys.twitterKeys);
 
   var params = {screen_name: "trevornelson86", count: 20};
   client.get('statuses/user_timeline', params, function(err, tweets, response){
@@ -61,11 +55,7 @@ function showTweets () {
 }
 
 function spotifySong (song) {
-	//var spotify = new Spotify(keys.spotifyKeys);
-	var spotify = new Spotify ({
-  	id: 'a29f61acb38844f5a8fe8ec3bde4c6f1',
-  	secret: '1df63b847c0d405eb5856fd65a9f198d'
- 	});
+	var spotify = new Spotify(keys.spotifyKeys);
 	spotify.search({ type: "track", query: song}, function(err, data){
     if (!err) {
       for (var i = 0; i < data.tracks.items.length; i++) {
