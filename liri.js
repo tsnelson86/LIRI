@@ -3,7 +3,6 @@ var Twitter = require("twitter");
 var Spotify = require("node-spotify-api");
 var request = require("request");
 var fs = require("fs");
-var omdb = require("omdb");
 
 var input = process.argv[2];
 
